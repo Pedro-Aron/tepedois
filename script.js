@@ -29,7 +29,7 @@ botao.addEventListener("click", function(){
         if(nomeinput == item.nome) {
             count ++;
             if (senhainput == item.senha) {
-                //entrar na pagina do jogo
+                window.location.href = "https://twitter.com"
             }
             else {
                 alert("senha incorreta");

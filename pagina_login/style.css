@@ -4,11 +4,11 @@ head, body{
 }
 
 body{
-    min-height: 100%;
     background-image: linear-gradient(90deg, #000000, #11051c,#191970,  #120a8f, #01058a) ;
 }
 
 #login{
+    display: grid;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -92,12 +92,3 @@ input{
     }
 }
 
-@media (min-width: 901px) and (max-width: 1600px){
-    #login{
-        width: 60%;
-        margin-bottom: 10%;
-    }
-    #titulo{
-        margin-top: 2%;
-    }
-}

@@ -4,7 +4,7 @@ head, body{
 }
 
 body{
-    background-color: black;
+    background: linear-gradient(60deg, #000000, #11051c,#191970,  #120a8f, #01058a) ;
 }
 
 #login{
@@ -12,11 +12,12 @@ body{
     flex-direction: column;
     justify-content: center;
     margin: auto;
+    margin-bottom: 10%;
     border-radius: 6%;
     width: 30%;
     height: 50%;
     box-shadow: 5px 5px 5px #00BFFF;
-    background-color: blue;
+    background: linear-gradient(-60deg, #4682B4, #4169E1, #0000FF);
     padding-bottom: 1.5%;
 }
 

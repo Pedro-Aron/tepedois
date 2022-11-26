@@ -18,9 +18,6 @@ criarconta.addEventListener("click", function(){
     }
 
     contas.push({nome: nomeinput, senha: senhainput});
-
-    console.log(contas);
-
 }); 
 
 botao.addEventListener("click", function(){

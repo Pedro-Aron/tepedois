@@ -4,9 +4,7 @@ head, body{
 }
 
 body{
-    background-image: url(data:image/png;base64,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);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: black;
 }
 
 #login{
@@ -23,6 +21,7 @@ body{
 }
 
 h1{
+    font-weight: 3.5vw;
     text-shadow: 3px 3px 3px #00BFFF;
     text-align: center;
     margin-top: 10%;
@@ -80,25 +79,4 @@ input{
     font-size: 1rem;
     border: solid 1.5px #9e9e9e;
     transition: 150ms cubic-bezier(0,4m 0, 0.2, 1);
-}
-
-input:focus{
-    outline: none;
-    border: 1.5px solid #1a73e8
-}
-
-input:focus ~ label{
-    transform: translateY(-50%);
-    background-color: black;
-    padding: 0 0.3em;
-    color: blue;
-}
-
-label{
-    position: relative;
-    bottom: 3.5rem;
-    left: 27.5%;
-    pointer-events: none;
-    transform: translateY(1rem);
-    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }

@@ -8,13 +8,13 @@ criarconta.addEventListener("click", function(){
     let nomeinput = document.querySelector("#nome").value; 
     let senhainput = document.querySelector("#senha").value; 
     if(nomeinput.length < 1 || senhainput.length < 8) {
-        alert("nome/senha inválidos");
+        alert("Nome/Senha Inválidos ou Não Preenchidos");
         return;
     };
 
     for (let item of contas) {
         if(nomeinput == item.nome) {
-            alert("nome já reservado");
+            alert("Nome Já Reservado");
             return;
         }
     }
@@ -34,14 +34,14 @@ botao.addEventListener("click", function(){
                 location.href = "../pagina_jogo/jogo.html"
             }
             else {
-                alert("senha incorreta");
+                alert("Senha Incorreta");
                 return;
             }
         }
     }
 
     if (count == 0) {
-        alert("conta não registrada");
+        alert("Conta Não Registrada");
     }
 });
 

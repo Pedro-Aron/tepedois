@@ -13,6 +13,7 @@ criarconta.addEventListener("click", function(){
 
     for (let item of contas) {
         if(nomeinput == item.nome) {
+            alert("nome já reservado");
             return;
         }
     }

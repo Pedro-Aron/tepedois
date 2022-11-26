@@ -7,11 +7,6 @@ criarconta.addEventListener("click", function(){
     
 }); 
 
-
-
-
-
-
 botao.addEventListener("click", function(){
     alert("on");
     let nomeinput = document.querySelector("#nome").value; 

@@ -30,7 +30,7 @@ botao.addEventListener("click", function(){
         if(nomeinput == item.nome) {
             count ++;
             if (senhainput == item.senha) {
-                location.href = "https://twitter.com"
+                location.href = "../pagina_jogo/jogo.html"
             }
             else {
                 alert("senha incorreta");

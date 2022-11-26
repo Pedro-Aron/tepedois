@@ -20,6 +20,7 @@ criarconta.addEventListener("click", function(){
     }
 
     contas.push({nome: nomeinput, senha: senhainput});
+    location.href = "../pagina_jogo/jogo.html"
 }); 
 
 botao.addEventListener("click", function(){

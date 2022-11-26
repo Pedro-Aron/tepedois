@@ -1,0 +1,42 @@
+head, body{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: black;
+}
+
+#login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    border-radius: 6%;
+    width: 50%;
+    height: 40%;
+    background-color: blue;
+}
+
+input{
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+}
+
+#senha{
+    margin-top: 2.5%;
+}
+
+h1{
+    text-align: center;
+    margin-top: 10%;
+    color: white;
+}
+
+.botao{
+    margin: auto;
+    width: 40%;
+    margin-bottom: 2%;
+}

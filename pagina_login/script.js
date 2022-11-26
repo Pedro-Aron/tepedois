@@ -1,5 +1,6 @@
 let botao = document.querySelector("#botao-jogar");
 let criarconta = document.querySelector("#botao-login");
+let ranks = document.querySelector("#botao-ranking");
 
 let contas = [];
 
@@ -42,4 +43,8 @@ botao.addEventListener("click", function(){
     if (count == 0) {
         alert("conta não registrada");
     }
+});
+
+ranks.addEventListener("click", function() {
+    location.href = "../pagina_melhores/ranking.html"
 });

@@ -4,7 +4,7 @@ head, body{
 }
 
 body{
-    background-color: darkslategray;
+    background-color: black;
 }
 
 #login{
@@ -12,6 +12,7 @@ body{
     flex-direction: column;
     justify-content: center;
     margin: auto;
+    border-radius: 6%;
     width: 50%;
     height: 40%;
     background-color: blue;
@@ -24,17 +25,17 @@ input{
     margin-bottom: 5%;
 }
 
+#senha{
+    margin-top: 2.5%;
+}
+
 h1{
     text-align: center;
+    margin-top: 10%;
+    color: white;
 }
 
-#botao-jogar{
-    margin: auto;
-    width: 40%;
-    margin-bottom: 2%;
-}
-
-#botao-ranking{
+.botao{
     margin: auto;
     width: 40%;
     margin-bottom: 2%;

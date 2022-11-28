@@ -2,7 +2,14 @@ let botao = document.querySelector("#botao-jogar");
 let criarconta = document.querySelector("#botao-login");
 let ranks = document.querySelector("#botao-ranking");
 
-let contas = [];
+let contas;
+
+$.ajax({
+    url: 'contas.json',
+    type: 'GET',
+    dataType: 'json',
+    success: contas
+});
 
 criarconta.addEventListener("click", function(){
     let nomeinput = document.querySelector("#nome").value; 
@@ -19,14 +26,23 @@ criarconta.addEventListener("click", function(){
         }
     }
 
-    contas.push({nome: nomeinput, senha: senhainput});
+    let contaNova = {nome: nomeinput, senha: senhainput, nVitorias: 0, nPartidas: 0, coef: 0};
+
+    contas.push(contaNova);
+
+    $.ajax({
+        url: 'contas.json', 
+        type: 'PUT',
+        dataType: 'json', 
+        data: contaNova
+    })
+    
     location.href = "../pagina_jogo/jogo.html"
 }); 
 
 botao.addEventListener("click", function(){
     let nomeinput = document.querySelector("#nome").value; 
     let senhainput = document.querySelector("#senha").value; 
-    let count = 0;
 
     for (let item of contas) {
         if(nomeinput == item.nome) {
@@ -41,9 +57,8 @@ botao.addEventListener("click", function(){
         }
     }
 
-    if (count == 0) {
-        alert("Conta Não Registrada");
-    }
+    alert("Conta Não Registrada");
+    
 });
 
 ranks.addEventListener("click", function() {

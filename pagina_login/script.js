@@ -5,11 +5,13 @@ let ranks = document.querySelector("#botao-ranking");
 let contas;
 
 $.ajax({
-    url: 'contas.json',
+    url: './contas.json',
     type: 'GET',
     dataType: 'json',
     success: contas
 });
+
+JSON.parse(contas);
 
 criarconta.addEventListener("click", function(){
     let nomeinput = document.querySelector("#nome").value; 
@@ -31,12 +33,12 @@ criarconta.addEventListener("click", function(){
     contas.push(contaNova);
 
     $.ajax({
-        url: 'contas.json', 
+        url: './contas.json', 
         type: 'PUT',
         dataType: 'json', 
-        data: contaNova
+        data: JSON.stringify(contaNova)
     })
-    
+
     location.href = "../pagina_jogo/jogo.html"
 }); 
 

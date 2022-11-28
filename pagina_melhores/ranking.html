@@ -4,31 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilo-ranking.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,200&display=swap" rel="stylesheet">
-    <title>Site</title>
+    <title>Ranking</title>
 </head>
 <body>
-
-    <div id="titulo">
-        <h1>ranking placeholder</h1>
+    <div id="cabecalho">
+        <h1>O JOGO DA VELHA</h1>
     </div>
-
-    <div id="login">
-
-        <div id="inputs">
-            <input id="nome" type="text" maxlength="15" placeholder="Digite seu Nome">
-
-            <input id="senha" type="password" maxlength="10" placeholder="Digite sua Senha">  
-
-        </div>
-
-        <button class="botao" id="botao-login">Criar Conta</button>
-
-        <button class="botao" id="botao-ranking">Ranking dos Melhores</button>
-
-        <button class="botao" id="botao-jogar">Jogar</button>
-
+    <div id="tabela">
+        <table>
+            <tr><th>Jogador</th> <th>Vitórias</th> </tr>
+            <tr><td id="jogador1-nome">Jogador 1</td> <td id="jogador1-pontos">X</td></tr>
+            <tr><td id="jogador2-nome">Jogador 2</td> <td id="jogador2-pontos">X</td></tr>
+            <tr><td id="jogador3-nome">Jogador 3</td> <td id="jogador3-pontos">X</td></tr>
+            <tr><td id="jogador4-nome">Jogador 4</td> <td id="jogador4-pontos">X</td></tr>
+        </table>
+    </div>
+    <div>
+        <button>Voltar ao Menu</button> 
     </div>
 
     <script src="script.js"></script>

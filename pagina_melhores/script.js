@@ -1,4 +1,5 @@
-botao = document.querySelector("button");
+botao = document.querySelector("#voltar");
+
 botao.addEventListener("click", function(){
-    location.href = "..pagina_melhores/ranking.html";
+    location.href = "../pagina_login/index.html";
 });

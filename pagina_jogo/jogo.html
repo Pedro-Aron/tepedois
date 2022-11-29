@@ -1,36 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,200&display=swap" rel="stylesheet">
-    <title>Site</title>
+    <link rel="stylesheet" href="jogo-estilo.css">
+    <title>jogin</title>
 </head>
 <body>
-
-    <div id="titulo">
-        <h1>placeholder da pagina do jogo</h1>
-    </div>
-
-    <div id="login">
-
-        <div id="inputs">
-            <input id="nome" type="text" maxlength="15" placeholder="Digite seu Nome">
-
-            <input id="senha" type="password" maxlength="10" placeholder="Digite sua Senha">  
-
+    <div class="player-escolha">
+        <header>Jogin da Velinha</header>
+        <div class="conteudo">
+            <h1 class="titulo">
+                Qual será você?
+            </h1>
+            <div class="opcoes">
+                <button class="jogaor-x">Jogador X</button>
+                <button class="jogaor-o">Jogador O</button>
+            </div>
         </div>
-
-        <button class="botao" id="botao-login">Criar Conta</button>
-
-        <button class="botao" id="botao-ranking">Ranking dos Melhores</button>
-
-        <button class="botao" id="botao-jogar">Jogar</button>
-
     </div>
 
-    <script src="script.js"></script>
+    <div class="jogo">
+        <div class="quem-joga">
+            <span class="vez-x">Vez de X</span>
+            <span class="vez-o">Vez de O</span>
+        </div>
+    </div>
 </body>
 </html>

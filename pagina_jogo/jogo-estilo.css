@@ -1,0 +1,31 @@
+body {
+    background-color: lightblue;
+}
+
+.quem-joga, .player-escolha {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.player-escolha {
+    background-color: blue;
+    padding: 25px;
+    border-radius: 25px;
+    max-width: 35%;
+    width: 100%;
+}
+
+.opcoes button {
+    cursor: pointer;
+}
+
+.quem-joga {
+    background-color: green;
+    padding: 25px;
+    border-radius: 25px;
+    max-width: 35%;
+    width: 100%;
+}

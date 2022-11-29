@@ -1,0 +1,30 @@
+body, html{
+    background: linear-gradient(90deg, #000000, #11051c,#191970,  #120a8f, #01058a)
+}
+
+#conteudo{
+    background-color: aliceblue;
+    width: 50%;
+    height: 80%;
+    margin-right: 25%;
+    margin-left: 25%;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    padding: 2%;
+    text-align: center;
+    border-radius: 1rem;
+    font-family: 'Source Code Pro', monospace;
+    box-shadow: black 13px 13px 13px;
+    animation: mudando 1s ease-out infinite alternate-reverse;
+}
+
+@keyframes mudando{
+    from{
+        margin-left: 25%;
+        width: 50%;
+    } 
+    to{
+        margin-left: 22.5%;
+        width: 55%;
+    }
+}

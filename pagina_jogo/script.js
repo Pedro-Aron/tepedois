@@ -65,15 +65,14 @@ function checkVitoria(jogador) {
         document.getElementById("vitoria").style.display = "flex";
         textoVitoriaEl.innerHTML = `${jogador.toUpperCase()} venceu!`;
         let contaLogada = localStorage.getItem("conta-logada");
-        for (let item of contas) {
+        contas.forEach(function(item) {
             if (item.nome == contaLogada) {
                 item.nVitorias++;
                 item.nPartidas++;
                 qs(contas);
                 console.log(contas);
-                break;
             }
-        }
+        });
         localStorage.setItem("contas", JSON.stringify(contas));
     }
 
@@ -82,12 +81,11 @@ function checkVitoria(jogador) {
         document.getElementById("vitoria").style.display = "flex";
         textoVitoriaEl.innerHTML = `Empate!`;
         let contaLogada = localStorage.getItem("conta-logada");
-        for (let item of contas) {
+        contas.forEach(function(item) {
             if (item.nome == contaLogada) {
                 item.nPartidas++;
-                break;
             }
-        }
+        })
         localStorage.setItem("contas", JSON.stringify(contas));
     }
 
@@ -116,12 +114,12 @@ criarconta.addEventListener("click", function(){
         return;
     };
 
-    for (let item of contas) {
+    contas.forEach(function(item) {
         if(nomeinput == item.nome) { 
             alert("Nome Já Reservado");
             return;
         }
-    }
+    })
 
     let contaNova = {nome: nomeinput, senha: senhainput, nVitorias: 0, nPartidas: 0};
     contas.push(contaNova);
@@ -137,7 +135,7 @@ botao.addEventListener("click", function(){
 
     let count = 0;
 
-    for (let item of contas) {
+    contas.forEach(function(item) {
         if(nomeinput == item.nome) {
             count++;
             if (senhainput == item.senha) {
@@ -151,7 +149,7 @@ botao.addEventListener("click", function(){
                 return;
             }
         }
-    }
+    })
 
     if(count==0)    alert("Conta Não Registrada");
     

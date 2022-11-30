@@ -65,14 +65,17 @@ function checkVitoria(jogador) {
         document.getElementById("vitoria").style.display = "flex";
         textoVitoriaEl.innerHTML = `${jogador.toUpperCase()} venceu!`;
         let contaLogada = localStorage.getItem("conta-logada");
-        contas.forEach(function(item) {
+
+        let tam = contas.length;
+
+        for (let i=0; i<tam; i++) {
             if (item.nome == contaLogada) {
                 item.nVitorias++;
                 item.nPartidas++;
                 qs(contas);
                 console.log(contas);
             }
-        });
+        };
         localStorage.setItem("contas", JSON.stringify(contas));
     }
 
@@ -81,11 +84,14 @@ function checkVitoria(jogador) {
         document.getElementById("vitoria").style.display = "flex";
         textoVitoriaEl.innerHTML = `Empate!`;
         let contaLogada = localStorage.getItem("conta-logada");
-        contas.forEach(function(item) {
+
+        let tam = contas.length;
+
+        for (let i=0; i<tam; i++) {
             if (item.nome == contaLogada) {
                 item.nPartidas++;
             }
-        })
+        }
         localStorage.setItem("contas", JSON.stringify(contas));
     }
 
@@ -114,12 +120,14 @@ criarconta.addEventListener("click", function(){
         return;
     };
 
-    contas.forEach(function(item) {
-        if(nomeinput == item.nome) { 
+    let tam = contas.length;
+
+    for (let i=0; i<tam; i++) {
+        if(nomeinput == contas[i].nome) { 
             alert("Nome Já Reservado");
             return;
         }
-    })
+    }
 
     let contaNova = {nome: nomeinput, senha: senhainput, nVitorias: 0, nPartidas: 0};
     contas.push(contaNova);
@@ -134,8 +142,9 @@ botao.addEventListener("click", function(){
     let senhainput = document.querySelector("#senha").value; 
 
     let count = 0;
+    let tam = contas.length;
 
-    contas.forEach(function(item) {
+    for (let i=0; i<tam; i++) {
         if(nomeinput == item.nome) {
             count++;
             if (senhainput == item.senha) {
@@ -149,7 +158,7 @@ botao.addEventListener("click", function(){
                 return;
             }
         }
-    })
+    }
 
     if(count==0)    alert("Conta Não Registrada");
     

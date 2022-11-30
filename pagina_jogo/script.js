@@ -37,8 +37,15 @@ function checkVitoria(jogador) {
     })
 
     if (vitoria) {
+        count = 0;
         document.getElementById("vitoria").style.display = "flex";
         textoVitoriaEl.innerHTML = `${jogador.toUpperCase()} venceu!`;
+    }
+
+    if (count == 9 && !vitoria) {
+        count = 0;
+        document.getElementById("vitoria").style.display = "flex";
+        textoVitoriaEl.innerHTML = `Empate!`;
     }
 
     return;

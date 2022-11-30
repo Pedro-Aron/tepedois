@@ -1,6 +1,10 @@
 let posEl = document.querySelectorAll(".pos");
 let textoVitoriaEl = document.querySelector("#texto-vitoria");
 let btnVitoriaEL = document.querySelector("#btn-vitoria");
+let botao = document.querySelector("#botao-jogar");
+let criarconta = document.querySelector("#botao-criar");
+let ranks = document.querySelector("#botao-ranking");
+
 let count = 0;
 
 let seqVitoria = [
@@ -15,6 +19,19 @@ let seqVitoria = [
     [1, 4, 7],
     [2, 5, 8]
 ]
+
+let contas = [{
+    nome: "teste1",
+    senha: "teste1",
+    nVitorias: 0, 
+    nPartidas: 0
+},
+{
+    nome: "teste2",
+    senha: "teste2",
+    nVitorias: 0, 
+    nPartidas: 0
+}]
 
 for (let item of posEl) {
     item.addEventListener("click", function() {
@@ -58,4 +75,54 @@ btnVitoriaEL.addEventListener("click", function() {
     }
 
     document.getElementById("vitoria").style.display = "none";
+});
+
+criarconta.addEventListener("click", function(){
+    let nomeinput = document.querySelector("#nome").value; 
+    let senhainput = document.querySelector("#senha").value; 
+
+    if(nomeinput.length < 1 || senhainput.length < 8) {
+        alert("Nome/Senha Inválidos ou Não Preenchidos");
+        return;
+    };
+
+    for (let item of contas) {
+        if(nomeinput == item.nome) { 
+            alert("Nome Já Reservado");
+            return;
+        }
+    }
+
+    let contaNova = {nome: nomeinput, senha: senhainput, nVitorias: 0, nPartidas: 0};
+
+    contas.push(contaNova);
+
+    alert("Conta registrada com sucesso!");
+}); 
+
+botao.addEventListener("click", function(){
+    let nomeinput = document.querySelector("#nome").value; 
+    let senhainput = document.querySelector("#senha").value; 
+
+    let count = 0;
+
+    for (let item of contas) {
+        if(nomeinput == item.nome) {
+            count++;
+            if (senhainput == item.senha) {
+                document.getElementById("login-aparece").style.display = "none";                
+            }
+            else {
+                alert("Senha Incorreta");
+                return;
+            }
+        }
+    }
+
+    if(count==0)    alert("Conta Não Registrada");
+    
+});
+
+ranks.addEventListener("click", function() {
+    location.href = "../pagina_creditos/creditos.html"
 });

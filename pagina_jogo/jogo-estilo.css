@@ -1,31 +1,107 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    background-color: lightblue;
+    height: 100vh; 
+    width: 100vw;
+    background: linear-gradient(45deg, #000000, #11051c,#191970,  #120a8f, #01058a)
 }
 
-.quem-joga, .player-escolha {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+#vitoria {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(100, 27, 27);
+    opacity: 0.8;
 }
 
-.player-escolha {
-    background-color: blue;
-    padding: 25px;
-    border-radius: 25px;
-    max-width: 35%;
-    width: 100%;
+#texto-vitoria {
+    font-size: 6em;
+    color: white;
 }
 
-.opcoes button {
+#btn-vitoria {
+    font-size: 1.5em;
+    background-color: rgb(77, 129, 232);
+    padding: 1% 1.5%;
+    border-radius: 1rem;
     cursor: pointer;
 }
 
-.quem-joga {
-    background-color: green;
-    padding: 25px;
-    border-radius: 25px;
-    max-width: 35%;
+.tabuleiro {
+    display: grid;
+    height: 100%;
     width: 100%;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+}
+.pos {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    border: 2px solid white;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.pos:nth-child(1), .pos:nth-child(2), .pos:nth-child(3) {
+    border-top: none;
+}
+
+.pos:nth-child(1), .pos:nth-child(4), .pos:nth-child(7) {
+    border-left: none;
+}
+
+.pos:nth-child(3), .pos:nth-child(6), .pos:nth-child(9) {
+    border-right: none;
+}
+
+.pos:nth-child(7), .pos:nth-child(8), .pos:nth-child(9) {
+    border-bottom: none;
+}
+
+.pos.x::before, .pos.x::after {
+    content: "";
+    height: calc(100px * 0.1);
+    width: calc(100px * 0.75);
+    background: black;
+    position: absolute;
+}
+
+.pos.x::before {
+    transform: rotate(45deg);
+}
+
+.pos.x::after {
+    transform: rotate(-45deg);
+}
+
+.pos.o::before, .pos.o::after {
+    content: "";
+    height: calc(100px * 0.75);
+    width: calc(100px * 0.75);
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.pos {
+    cursor: pointer;
+}
+
+.pos.o, .pos.x {
+    cursor: not-allowed;
 }

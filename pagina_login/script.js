@@ -62,5 +62,5 @@ botao.addEventListener("click", function(){
 });
 
 ranks.addEventListener("click", function() {
-    location.href = "../pagina_melhores/ranking.html"
+    location.href = "../pagina_creditos/creditos.html"
 });

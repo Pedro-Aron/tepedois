@@ -8,24 +8,23 @@
     <title>jogin</title>
 </head>
 <body>
-    <div class="player-escolha">
-        <header>Jogin da Velinha</header>
-        <div class="conteudo">
-            <h1 class="titulo">
-                Qual será você?
-            </h1>
-            <div class="opcoes">
-                <button class="jogaor-x">Jogador X</button>
-                <button class="jogaor-o">Jogador O</button>
-            </div>
-        </div>
+    <div class="tabuleiro">
+        <div class="pos"></div>
+        <div class="pos"></div>
+        <div class="pos"></div>
+        <div class="pos"></div>
+        <div class="pos"></div>
+        <div class="pos"></div>
+        <div class="pos"></div>
+        <div class="pos"></div>
+        <div class="pos"></div>
     </div>
 
-    <div class="jogo">
-        <div class="quem-joga">
-            <span class="vez-x">Vez de X</span>
-            <span class="vez-o">Vez de O</span>
-        </div>
+    <div id="vitoria">
+        <p id="texto-vitoria">X venceu</p>
+        <button id="btn-vitoria">Novo Jogo</button>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

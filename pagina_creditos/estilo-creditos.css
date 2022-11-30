@@ -1,12 +1,12 @@
-body, html{
-    background: linear-gradient(90deg, #000000, #11051c,#191970,  #120a8f, #01058a)
+body{
+    height: 100vh;
+    background: linear-gradient(45deg, #000000, #11051c,#191970,  #120a8f, #01058a)
 }
 
 #conteudo{
     background-color: aliceblue;
+    box-sizing: border-box;
     width: 50%;
-    height: 80%;
-    margin-right: 25%;
     margin-left: 25%;
     margin-top: 20%;
     margin-bottom: 20%;
@@ -18,13 +18,25 @@ body, html{
     animation: mudando 1s ease-out infinite alternate-reverse;
 }
 
+#retornar{
+    margin: auto;
+    width: 80%;
+    margin-bottom: 4%;
+    padding: 1%;
+    box-shadow: 4px 4px 4px #00008B;
+    font-family: 'Source Code Pro', monospace;
+    color: white;
+    cursor: pointer;
+    background-color: #191970;
+}
+
 @keyframes mudando{
     from{
         margin-left: 25%;
         width: 50%;
     } 
     to{
-        margin-left: 22.5%;
+        margin-left: 22%;
         width: 55%;
     }
 }

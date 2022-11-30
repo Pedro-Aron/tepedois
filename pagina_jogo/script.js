@@ -33,6 +33,8 @@ let contas = [{
     nPartidas: 0
 }]
 
+contas = JSON.parse(localStorage.getItem("contas"));
+
 for (let item of posEl) {
     item.addEventListener("click", function() {
          if (getComputedStyle(item).cursor != "not-allowed") {
@@ -41,7 +43,7 @@ for (let item of posEl) {
 
             count++;
 
-            (count) % 2 ? checkVitoria("x") : checkVitoria("o");
+            (count % 2) ? checkVitoria("x") : checkVitoria("o");
          }
     });
 }
@@ -57,12 +59,26 @@ function checkVitoria(jogador) {
         count = 0;
         document.getElementById("vitoria").style.display = "flex";
         textoVitoriaEl.innerHTML = `${jogador.toUpperCase()} venceu!`;
+        let contaLogada = localStorage.getItem("conta-logada");
+        for (let item of contas) {
+            if (item.nome == contaLogada) {
+                item.nVitorias++;
+                item.nPartidas++;
+            }
+        }
+        localStorage.setItem("contas", JSON.stringify(contas));
     }
 
     if (count == 9 && !vitoria) {
         count = 0;
         document.getElementById("vitoria").style.display = "flex";
         textoVitoriaEl.innerHTML = `Empate!`;
+        let contaLogada = localStorage.getItem("conta-logada");
+        for (let item of contas) {
+            if (item.nome == contaLogada) 
+                item.nPartidas++;
+        }
+        localStorage.setItem("contas", JSON.stringify(contas));
     }
 
     return;
@@ -94,8 +110,9 @@ criarconta.addEventListener("click", function(){
     }
 
     let contaNova = {nome: nomeinput, senha: senhainput, nVitorias: 0, nPartidas: 0};
-
     contas.push(contaNova);
+
+    localStorage.setItem("contas", JSON.stringify(contas));
 
     alert("Conta registrada com sucesso!");
 }); 
@@ -110,7 +127,8 @@ botao.addEventListener("click", function(){
         if(nomeinput == item.nome) {
             count++;
             if (senhainput == item.senha) {
-                document.getElementById("login-aparece").style.display = "none";                
+                document.getElementById("login-aparece").style.display = "none";
+                localStorage.setItem("conta-logada", `${nomeinput}`);
             }
             else {
                 alert("Senha Incorreta");

@@ -69,11 +69,10 @@ function checkVitoria(jogador) {
         let tam = contas.length;
 
         for (let i=0; i<tam; i++) {
-            if (item.nome == contaLogada) {
-                item.nVitorias++;
-                item.nPartidas++;
+            if (contas[i].nome == contaLogada) {
+                contas[i].nVitorias++;
+                contas[i].nPartidas++;
                 qs(contas);
-                console.log(contas);
             }
         };
         localStorage.setItem("contas", JSON.stringify(contas));
@@ -88,8 +87,8 @@ function checkVitoria(jogador) {
         let tam = contas.length;
 
         for (let i=0; i<tam; i++) {
-            if (item.nome == contaLogada) {
-                item.nPartidas++;
+            if (contas[i].nome == contaLogada) {
+                contas[i].nPartidas++;
             }
         }
         localStorage.setItem("contas", JSON.stringify(contas));
@@ -145,9 +144,9 @@ botao.addEventListener("click", function(){
     let tam = contas.length;
 
     for (let i=0; i<tam; i++) {
-        if(nomeinput == item.nome) {
+        if(nomeinput == contas[i].nome) {
             count++;
-            if (senhainput == item.senha) {
+            if (senhainput == contas[i].senha) {
                 document.querySelector("#nome").value = "";
                 document.querySelector("#senha").value = "";
                 localStorage.setItem("conta-logada", `${nomeinput}`);

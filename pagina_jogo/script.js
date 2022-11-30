@@ -38,7 +38,12 @@ let contas = [{
     nPartidas: 0
 }]
 
-contas = JSON.parse(localStorage.getItem("contas"));
+let contasLidas;
+contasLidas = JSON.parse(localStorage.getItem("contas"));
+
+if (contasLidas != null) {
+    contas = contasLidas
+}
 
 for (let item of posEl) {
     item.addEventListener("click", function() {

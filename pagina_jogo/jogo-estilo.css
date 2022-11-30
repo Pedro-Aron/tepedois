@@ -29,7 +29,7 @@ body {
     color: white;
 }
 
-#btn-vitoria {
+#btn-vitoria, #btn-retorno, #btn-creditos {
     font-size: 1.5em;
     background-color: rgb(77, 129, 232);
     padding: 1% 1.5%;
@@ -119,6 +119,45 @@ body {
     background-image: linear-gradient(45deg, #000000, #11051c,#191970,  #120a8f, #01058a) ;
 }
 
+#ranking {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    margin-bottom: 3%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(45deg, #000000, #11051c,#191970,  #120a8f, #01058a);
+}
+
+#btn-rank-voltar {
+    box-shadow: 4px 4px 4px lightgrey;
+    padding: 2vh;
+    width: 15%;
+    margin-bottom: 3%;
+}
+
+#ranking table {
+    width: 50%;
+    height: 80%;
+    background-color: white;
+    border: 3px black solid;
+    box-shadow: 4px 4px 4px #00BFFF;
+    text-align: center;
+    padding: 2%;
+}
+
+#ranking table tbody tr td, #ranking table thead th{
+    padding: 1%;
+}
+
+#ranking table thead:first-child {
+    font-size: 1.5em;
+}
+
 #login{
     display: grid;
     display: flex;
@@ -170,7 +209,7 @@ h1{
     margin: auto;
     width: 80%;
     margin-bottom: 4%;
-    padding: 1%;
+    padding: 2.5%;
     box-shadow: 4px 4px 4px #00008B;
     font-family: 'Source Code Pro', monospace;
     color: white;
@@ -199,6 +238,7 @@ input{
     transition: 400ms cubic-bezier(0,4m 0, 0.2, 1);
 }
 
+
 @media (max-width: 900px ){
     #login{
         width: 70%;
@@ -208,3 +248,4 @@ input{
         margin-top: 30%;  
     }
 }
+
